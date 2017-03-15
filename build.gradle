@@ -5,11 +5,16 @@ buildscript {
     repositories {
         maven { url "https://repo.grails.org/grails/core" }
         jcenter()
-	maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
+        maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
     }
+}
+
+repositories {
+    maven { url "https://repo.grails.org/grails/core" }
+    jcenter()
 }
 
 apply plugin: "org.grails.grails-plugin"
@@ -21,3 +26,7 @@ bootRepackage {
     enabled = false
 }
 
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.9'
+    compile "org.grails:grails-core:$grailsVersion"
+}
