@@ -1,0 +1,23 @@
+buildscript {
+    ext {
+        grailsVersion = '3.2.7'
+    }
+    repositories {
+        maven { url "https://repo.grails.org/grails/core" }
+        jcenter()
+	maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+    }
+}
+
+apply plugin: "org.grails.grails-plugin"
+
+springBoot {
+    mainClass = 'grails.plugins.Application'
+}
+bootRepackage {
+    enabled = false
+}
+
